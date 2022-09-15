@@ -12,6 +12,9 @@
 extern void setUp(void);
 extern void tearDown(void);
 extern void test_led_init_turns_on_only_LEDs(void);
+extern void test_LED_Toggle_should_ToggleTheCorrectOutput(void);
+extern void test_LED_On_should_EnableTheCorrectOutput(void);
+extern void test_LED_Off_should_DisableTheCorrectOutput(void);
 
 
 /*=======Mock Management=====*/
@@ -79,7 +82,10 @@ static void run_test(UnityTestFunction func, const char* name, int line_num)
 int main(void)
 {
   UnityBegin("TestLED.c");
-  run_test(test_led_init_turns_on_only_LEDs, "test_led_init_turns_on_only_LEDs", 13);
+  run_test(test_led_init_turns_on_only_LEDs, "test_led_init_turns_on_only_LEDs", 12);
+  run_test(test_LED_Toggle_should_ToggleTheCorrectOutput, "test_LED_Toggle_should_ToggleTheCorrectOutput", 24);
+  run_test(test_LED_On_should_EnableTheCorrectOutput, "test_LED_On_should_EnableTheCorrectOutput", 29);
+  run_test(test_LED_Off_should_DisableTheCorrectOutput, "test_LED_Off_should_DisableTheCorrectOutput", 34);
 
   return UnityEnd();
 }

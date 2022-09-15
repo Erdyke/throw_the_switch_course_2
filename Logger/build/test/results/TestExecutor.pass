@@ -4,19 +4,35 @@
   :file: TestExecutor.c
 :successes:
 - :test: test_Executor_Init_should_InitializeAllSubsystems
-  :line: 13
+  :line: 14
   :message: ''
   :unity_test_time: 0
 - :test: test_Executor_Exec_should_AlwaysReturnTrue
-  :line: 20
+  :line: 22
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Executor_Exec_should_ToggleLED0_when_Digita0or1isHigh
+  :line: 33
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Executor_Exec_should_ToggleLED1_when_Digita2or3isHigh
+  :line: 48
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Executor_Exec_should_ToggleLED2_when_Digita4or5isHigh
+  :line: 63
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Executor_Exec_should_not_Toggle_Any_LED0_when_Digital0and1areLow
+  :line: 78
   :message: ''
   :unity_test_time: 0
 :failures: []
 :ignores: []
 :counts:
-  :total: 2
-  :passed: 2
+  :total: 6
+  :passed: 6
   :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.024489311999786878
+:time: 0.02486591300021246

@@ -9,26 +9,34 @@
 #include "stdint.h"
 #include "Core.h"
 #include "MockLED.h"
+#include "MockDigital.h"
 
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
 extern void tearDown(void);
 extern void test_Executor_Init_should_InitializeAllSubsystems(void);
 extern void test_Executor_Exec_should_AlwaysReturnTrue(void);
+extern void test_Executor_Exec_should_ToggleLED0_when_Digita0or1isHigh(void);
+extern void test_Executor_Exec_should_ToggleLED1_when_Digita2or3isHigh(void);
+extern void test_Executor_Exec_should_ToggleLED2_when_Digita4or5isHigh(void);
+extern void test_Executor_Exec_should_not_Toggle_Any_LED0_when_Digital0and1areLow(void);
 
 
 /*=======Mock Management=====*/
 static void CMock_Init(void)
 {
   MockLED_Init();
+  MockDigital_Init();
 }
 static void CMock_Verify(void)
 {
   MockLED_Verify();
+  MockDigital_Verify();
 }
 static void CMock_Destroy(void)
 {
   MockLED_Destroy();
+  MockDigital_Destroy();
 }
 
 /*=======Test Reset Options=====*/
@@ -79,8 +87,12 @@ static void run_test(UnityTestFunction func, const char* name, int line_num)
 int main(void)
 {
   UnityBegin("TestExecutor.c");
-  run_test(test_Executor_Init_should_InitializeAllSubsystems, "test_Executor_Init_should_InitializeAllSubsystems", 13);
-  run_test(test_Executor_Exec_should_AlwaysReturnTrue, "test_Executor_Exec_should_AlwaysReturnTrue", 20);
+  run_test(test_Executor_Init_should_InitializeAllSubsystems, "test_Executor_Init_should_InitializeAllSubsystems", 14);
+  run_test(test_Executor_Exec_should_AlwaysReturnTrue, "test_Executor_Exec_should_AlwaysReturnTrue", 22);
+  run_test(test_Executor_Exec_should_ToggleLED0_when_Digita0or1isHigh, "test_Executor_Exec_should_ToggleLED0_when_Digita0or1isHigh", 33);
+  run_test(test_Executor_Exec_should_ToggleLED1_when_Digita2or3isHigh, "test_Executor_Exec_should_ToggleLED1_when_Digita2or3isHigh", 48);
+  run_test(test_Executor_Exec_should_ToggleLED2_when_Digita4or5isHigh, "test_Executor_Exec_should_ToggleLED2_when_Digita4or5isHigh", 63);
+  run_test(test_Executor_Exec_should_not_Toggle_Any_LED0_when_Digital0and1areLow, "test_Executor_Exec_should_not_Toggle_Any_LED0_when_Digital0and1areLow", 78);
 
   CMock_Guts_MemFreeFinal();
   return UnityEnd();

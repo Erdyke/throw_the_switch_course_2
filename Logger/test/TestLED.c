@@ -1,6 +1,5 @@
 #include "Core.h"
 #include "unity.h"
-#include "Main.h"
 #include "cmock.h"
 #include "LPC1768.h"
 #include "LED.h"
@@ -19,4 +18,20 @@ void test_led_init_turns_on_only_LEDs(void)
 
     TEST_ASSERT_EQUAL_HEX32(EXPECTED_LED_BITS, LPC_GPIO1->FIODIR);
     TEST_ASSERT_EQUAL_HEX32(EXPECTED_LED_BITS, LPC_GPIO1->FIOSET);
+}
+
+
+void test_LED_Toggle_should_ToggleTheCorrectOutput(void)
+{
+    TEST_IGNORE_MESSAGE("Implement LED_Toggle");
+}
+
+void test_LED_On_should_EnableTheCorrectOutput(void)
+{
+    TEST_IGNORE_MESSAGE("Implement me");
+}
+
+void test_LED_Off_should_DisableTheCorrectOutput(void)
+{
+    TEST_IGNORE_MESSAGE("Implement me");
 }

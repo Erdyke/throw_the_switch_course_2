@@ -1,11 +1,12 @@
 #include "Core.h"
-#include "Main.h"
 #include "Executor.h"
+#include "LED.h"
+#include "Main.h"
 
 #ifndef TEST
-    int main(void)
+int main(void)
 #else
-    int TestableMain(void)
+int TestableMain(void)
 #endif
 {
     Executor_Init();
