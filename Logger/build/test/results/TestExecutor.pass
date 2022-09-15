@@ -1,0 +1,22 @@
+---
+:source:
+  :path: test
+  :file: TestExecutor.c
+:successes:
+- :test: test_Executor_Init_should_InitializeAllSubsystems
+  :line: 13
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Executor_Exec_should_AlwaysReturnTrue
+  :line: 20
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 2
+  :passed: 2
+  :failed: 0
+  :ignored: 0
+:stdout: []
+:time: 0.024489311999786878
